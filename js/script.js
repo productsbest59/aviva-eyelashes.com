@@ -2,6 +2,7 @@ const menuButton = document.querySelector('.menu-button');
 const siteMenu = document.querySelector('.site-menu');
 const accessButton = document.querySelector('.access-tab');
 const accessPanel = document.querySelector('.access-panel');
+const accessClose = document.querySelector('.access-close');
 const galleryButtons = Array.from(document.querySelectorAll('.gallery-grid button'));
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = document.querySelector('.lightbox img');
@@ -9,8 +10,27 @@ const closeLightbox = document.querySelector('.lightbox-close');
 const prevLightbox = document.querySelector('.lightbox-prev');
 const nextLightbox = document.querySelector('.lightbox-next');
 
+const accessClasses = [
+  'access-large',
+  'access-small',
+  'access-contrast',
+  'access-light',
+  'access-links',
+  'access-spacing',
+  'access-motion'
+];
+
 let currentGallery = [];
 let currentIndex = 0;
+
+function closeMenu() {
+  if (!siteMenu || !menuButton) {
+    return;
+  }
+
+  siteMenu.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+}
 
 if (menuButton && siteMenu) {
   menuButton.addEventListener('click', () => {
@@ -19,18 +39,43 @@ if (menuButton && siteMenu) {
   });
 
   siteMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      siteMenu.classList.remove('open');
-      menuButton.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeMenu);
   });
+}
+
+function openAccess() {
+  if (!accessPanel || !accessButton) {
+    return;
+  }
+
+  accessPanel.classList.add('open');
+  accessPanel.setAttribute('aria-hidden', 'false');
+  accessButton.setAttribute('aria-expanded', 'true');
+}
+
+function closeAccess() {
+  if (!accessPanel || !accessButton) {
+    return;
+  }
+
+  accessPanel.classList.remove('open');
+  accessPanel.setAttribute('aria-hidden', 'true');
+  accessButton.setAttribute('aria-expanded', 'false');
 }
 
 if (accessButton && accessPanel) {
   accessButton.addEventListener('click', () => {
-    const isOpen = accessPanel.classList.toggle('open');
-    accessButton.setAttribute('aria-expanded', String(isOpen));
+    if (accessPanel.classList.contains('open')) {
+      closeAccess();
+      return;
+    }
+
+    openAccess();
   });
+}
+
+if (accessClose) {
+  accessClose.addEventListener('click', closeAccess);
 }
 
 function openLightbox(button) {
@@ -93,27 +138,57 @@ if (lightbox) {
   });
 }
 
-document.addEventListener('keydown', (event) => {
-  if (!lightbox || !lightbox.classList.contains('open')) {
-    return;
+function saveAccessState() {
+  const active = accessClasses.filter((className) => {
+    return document.body.classList.contains(className);
+  });
+
+  localStorage.setItem('avivaAccess', JSON.stringify(active));
+  syncAccessButtons();
+}
+
+function loadAccessState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('avivaAccess') || '[]');
+
+    if (Array.isArray(saved)) {
+      saved.forEach((className) => {
+        if (accessClasses.includes(className)) {
+          document.body.classList.add(className);
+        }
+      });
+    }
+  } catch (error) {
+    localStorage.removeItem('avivaAccess');
   }
 
-  if (event.key === 'Escape') {
-    hideLightbox();
-  }
+  syncAccessButtons();
+}
 
-  if (event.key === 'ArrowLeft') {
-    moveLightbox(-1);
-  }
+function syncAccessButtons() {
+  document.querySelectorAll('[data-access]').forEach((button) => {
+    const action = button.dataset.access;
+    const className = `access-${action}`;
+    const isActive = document.body.classList.contains(className);
 
-  if (event.key === 'ArrowRight') {
-    moveLightbox(1);
-  }
-});
+    button.classList.toggle('is-active', isActive);
+  });
+}
+
+function resetAccess() {
+  document.body.classList.remove(...accessClasses);
+  localStorage.removeItem('avivaAccess');
+  syncAccessButtons();
+}
 
 document.querySelectorAll('[data-access]').forEach((button) => {
   button.addEventListener('click', () => {
     const action = button.dataset.access;
+
+    if (action === 'reset') {
+      resetAccess();
+      return;
+    }
 
     if (action === 'increase') {
       document.body.classList.remove('access-small');
@@ -129,17 +204,62 @@ document.querySelectorAll('[data-access]').forEach((button) => {
       document.body.classList.toggle('access-contrast');
     }
 
+    if (action === 'light') {
+      document.body.classList.toggle('access-light');
+    }
+
     if (action === 'links') {
       document.body.classList.toggle('access-links');
     }
 
-    if (action === 'reset') {
-      document.body.classList.remove(
-        'access-large',
-        'access-small',
-        'access-contrast',
-        'access-links'
-      );
+    if (action === 'spacing') {
+      document.body.classList.toggle('access-spacing');
     }
+
+    if (action === 'motion') {
+      document.body.classList.toggle('access-motion');
+    }
+
+    saveAccessState();
   });
 });
+
+document.addEventListener('click', (event) => {
+  const target = event.target;
+
+  if (!accessPanel || !accessButton) {
+    return;
+  }
+
+  const clickedPanel = accessPanel.contains(target);
+  const clickedButton = accessButton.contains(target);
+
+  if (!clickedPanel && !clickedButton) {
+    closeAccess();
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeMenu();
+    closeAccess();
+
+    if (lightbox && lightbox.classList.contains('open')) {
+      hideLightbox();
+    }
+  }
+
+  if (!lightbox || !lightbox.classList.contains('open')) {
+    return;
+  }
+
+  if (event.key === 'ArrowLeft') {
+    moveLightbox(-1);
+  }
+
+  if (event.key === 'ArrowRight') {
+    moveLightbox(1);
+  }
+});
+
+loadAccessState();
