@@ -736,3 +736,97 @@ body.access-motion *::after {
     width: auto;
   }
 }
+
+/* Final icon/floating-tab fix */
+.detail-icon img,
+.side-icon img {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+  max-width: 28px !important;
+  max-height: 28px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+.detail-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.side-actions {
+  right: 0 !important;
+  overflow: visible !important;
+}
+
+.side-tab {
+  width: 56px !important;
+  min-width: 56px !important;
+  max-width: 56px !important;
+  height: 52px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  gap: 0 !important;
+  transition: max-width 0.25s ease, width 0.25s ease !important;
+}
+
+.side-tab:hover,
+.side-tab:focus,
+.side-tab.is-open {
+  width: 154px !important;
+  min-width: 154px !important;
+  max-width: 154px !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  padding: 0 14px !important;
+}
+
+.side-icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  max-width: 28px !important;
+  flex: 0 0 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.side-label {
+  display: block !important;
+  width: 0 !important;
+  max-width: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.15s ease, max-width 0.2s ease !important;
+}
+
+.side-tab:hover .side-label,
+.side-tab:focus .side-label,
+.side-tab.is-open .side-label {
+  width: auto !important;
+  max-width: 90px !important;
+  opacity: 1 !important;
+}
+
+.access-sign {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  line-height: 1 !important;
+  font-size: 25px !important;
+}
