@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fff7f9"/>
+      <stop offset="1" stop-color="#e8b8c5"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="700" fill="url(#g)"/>
+  <circle cx="450" cy="300" r="150" fill="#111" opacity="0.12"/>
+  <path d="M250 340 Q450 210 650 340" fill="none" stroke="#111" stroke-width="18" stroke-linecap="round" opacity="0.55"/>
+  <path d="M315 355 Q450 280 585 355" fill="none" stroke="#111" stroke-width="10" stroke-linecap="round" opacity="0.45"/>
+  <text x="450" y="545" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#171313">תמונה לגלריה</text>
+</svg>

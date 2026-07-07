@@ -1,0 +1,15 @@
+{
+  "name": "Aviva Eyelash",
+  "short_name": "Aviva",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7dfe5",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
