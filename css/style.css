@@ -962,3 +962,66 @@ body.access-motion *::after {
     padding: 8px 2px !important;
   }
 }
+
+/* Waze official icon correction */
+.detail-icon img.waze-icon-img {
+  width: 44px !important;
+  height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
+}
+
+@media (max-width: 700px) {
+  .detail-icon img.waze-icon-img {
+    width: 32px !important;
+    height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+  }
+}
+
+/* Final exact icon fixes */
+.studio-details .detail-icon img {
+  width: 46px !important;
+  height: 46px !important;
+  max-width: 46px !important;
+  max-height: 46px !important;
+}
+
+.studio-details .detail-icon img.waze-icon-img {
+  width: 52px !important;
+  height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+}
+
+.whatsapp-tab .side-icon img {
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  filter: none !important;
+}
+
+@media (max-width: 700px) {
+  .studio-details .detail-icon img {
+    width: 34px !important;
+    height: 34px !important;
+    max-width: 34px !important;
+    max-height: 34px !important;
+  }
+
+  .studio-details .detail-icon img.waze-icon-img {
+    width: 38px !important;
+    height: 38px !important;
+    max-width: 38px !important;
+    max-height: 38px !important;
+  }
+
+  .whatsapp-tab .side-icon img {
+    width: 31px !important;
+    height: 31px !important;
+    max-width: 31px !important;
+    max-height: 31px !important;
+  }
+}
