@@ -263,3 +263,34 @@ document.addEventListener('keydown', (event) => {
 });
 
 loadAccessState();
+
+// Keep FormSubmit on the same page and show a success message.
+document.querySelectorAll('.contact-form').forEach((form) => {
+  const status = form.querySelector('.form-status');
+  const button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', () => {
+    form.classList.add('is-sending');
+    if (button) {
+      button.disabled = true;
+      button.textContent = 'שולח...';
+    }
+    if (status) {
+      status.classList.remove('is-visible');
+      status.textContent = '';
+    }
+
+    window.setTimeout(() => {
+      form.classList.remove('is-sending');
+      form.reset();
+      if (button) {
+        button.disabled = false;
+        button.textContent = 'שליחת הודעה';
+      }
+      if (status) {
+        status.textContent = 'ההודעה נשלחה בהצלחה';
+        status.classList.add('is-visible');
+      }
+    }, 900);
+  });
+});

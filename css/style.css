@@ -830,3 +830,83 @@ body.access-motion *::after {
   line-height: 1 !important;
   font-size: 25px !important;
 }
+
+/* Aviva final fixes: clean icons, mobile header, same-page form message */
+.formsubmit-frame {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  border: 0;
+}
+
+.form-status {
+  display: none;
+  margin: 4px 0 0;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #eaf8ee;
+  color: #136b2c;
+  border: 1px solid rgba(19, 107, 44, 0.18);
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-status.is-visible {
+  display: block;
+}
+
+.contact-form.is-sending button {
+  opacity: 0.72;
+  cursor: wait;
+}
+
+.detail-icon,
+.side-icon {
+  line-height: 0 !important;
+}
+
+.detail-icon img {
+  width: 36px !important;
+  height: 36px !important;
+  max-width: 36px !important;
+  max-height: 36px !important;
+}
+
+.side-icon img {
+  width: 30px !important;
+  height: 30px !important;
+  max-width: 30px !important;
+  max-height: 30px !important;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    margin-top: 0;
+    border-radius: 0 0 22px 22px;
+  }
+
+  .hero-image {
+    min-height: 0 !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+  }
+
+  .menu-button {
+    width: 42px !important;
+    height: 38px !important;
+    border-radius: 12px !important;
+  }
+
+  .menu-button span {
+    width: 20px;
+    margin: 4px auto;
+  }
+
+  .site-menu {
+    max-height: calc(100vh - 76px);
+    overflow-y: auto;
+  }
+}

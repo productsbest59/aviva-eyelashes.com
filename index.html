@@ -29,7 +29,10 @@
     name="twitter:description"
     content="הרמת ריסים והרמת ועיצוב גבות בחולון.">
 
-  <link rel="icon" href="images/logo.png">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/style.css">
 
@@ -267,6 +270,7 @@
         <form
           action="https://formsubmit.co/avivahailo123@gmail.com"
           method="POST"
+          target="formsubmit-frame"
           class="contact-form">
           <input
             type="hidden"
@@ -291,7 +295,13 @@
           </label>
 
           <button type="submit">שליחת הודעה</button>
+          <p class="form-status" aria-live="polite"></p>
         </form>
+        <iframe
+          class="formsubmit-frame"
+          name="formsubmit-frame"
+          title="שליחת טופס"
+          aria-hidden="true"></iframe>
       </div>
     </section>
   </main>
