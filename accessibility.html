@@ -1,43 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>הצהרת נגישות | Aviva Eyelash</title>
-  <meta name="description" content="הצהרת נגישות לאתר Aviva Eyelash.">
+  <meta name="description" content="הצהרת נגישות אתר Aviva Eyelash">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aviva-eyelashes.com/accessibility.html">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .legal-hero {
+      margin-top:0;
+    }
+    .legal-page {
+      width:min(920px, calc(100% - 32px));
+      margin:48px auto 54px;
+    }
+    .legal-card {
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(231,95,149,.22);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      padding:clamp(22px,4vw,38px);
+    }
+    .legal-card h1 {
+      margin:0 0 20px;
+      font-size:clamp(28px,5vw,42px);
+      text-align:center;
+    }
+    .legal-card h2 {
+      margin:28px 0 8px;
+      font-size:22px;
+      color:var(--pink-dark);
+    }
+    .legal-card p,
+    .legal-card li {
+      font-size:17px;
+      line-height:1.85;
+      color:var(--ink);
+    }
+    .legal-card ul {
+      padding-right:22px;
+      margin:8px 0 0;
+    }
+    .legal-back-wrap {
+      text-align:center;
+      margin-top:30px;
+    }
+    .legal-back {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 24px;
+      border:2px solid #000;
+      border-radius:999px;
+      background:#000;
+      color:var(--pink-main);
+      font-weight:700;
+    }
+    @media (max-width:700px){
+      .legal-hero .hero-image{
+        min-height:250px;
+        object-fit:cover;
+        object-position:center top;
+      }
+      .legal-page{
+        width:min(100% - 24px, 620px);
+        margin:34px auto 44px;
+      }
+      .legal-card{
+        padding:22px 16px;
+      }
+      .legal-card p,
+      .legal-card li{
+        font-size:16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main class="legal-page">
-    <article class="legal-card">
-      <a class="btn back-home" href="index.html">חזרה לדף הבית</a>
-      <h1>הצהרת נגישות</h1>
-      <p>
-        אנו עושים מאמץ לאפשר שימוש נוח ונגיש באתר לכלל המשתמשות והמשתמשים.
-      </p>
+  <a class="skip-link" href="#main">דלגי לתוכן המרכזי</a>
 
-      <h2>התאמות נגישות באתר</h2>
-      <p>
-        האתר כולל מבנה כותרות תקין, טקסטים קריאים, אפשרות ניווט במקלדת,
-        כפתור דילוג לתוכן מרכזי, תיאורי תמונות וכלי נגישות בסיסיים.
-      </p>
+  <button class="menu-button" type="button" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="site-menu">
+    <span></span><span></span><span></span>
+  </button>
 
-      <h2>כלי הנגישות</h2>
-      <p>
-        באתר קיים כפתור נגישות המאפשר הגדלת טקסט, ניגודיות גבוהה,
-        סימון קישורים בקו תחתון ואיפוס התאמות.
-      </p>
+  <nav class="site-menu" id="site-menu" aria-label="תפריט ראשי">
+    <a href="index.html#services">השירותים</a>
+    <a href="index.html#lashes-gallery">גלריית ריסים</a>
+    <a href="index.html#brows-gallery">גלריית גבות</a>
+    <a href="index.html#studio-details">פרטי הסטודיו</a>
+    <a href="index.html#contact">יצירת קשר</a>
+    <a href="terms.html">תקנון</a>
+    <a href="privacy.html">פרטיות</a>
+    <a href="accessibility.html">נגישות</a>
+  </nav>
 
-      <h2>פנייה בנושא נגישות</h2>
-      <p>
-        אם נתקלת בקושי בשימוש באתר, ניתן לפנות אלינו וננסה לסייע בהקדם.
-      </p>
-      <p>
-        מייל: avivahailo123@gmail.com<br>
-        טלפון: 053-622-9329
-      </p>
-    </article>
-  </main>
+  <header class="hero legal-hero" aria-label="Aviva Eyelash">
+    <img
+      src="images/header.png"
+      alt="אביבה איילאש - הרמת ריסים והרמת ועיצוב גבות"
+      class="hero-image">
+  </header>
+
+<main id="main" class="legal-page">
+  <article class="legal-card">
+    <h1>הצהרת נגישות</h1>
+    <p>Aviva Eyelash רואה חשיבות במתן שירות נגיש ושוויוני לכלל המשתמשות והמשתמשים, ופועלת להנגשת האתר ככל הניתן.</p>
+
+    <h2>התאמות נגישות באתר</h2>
+    <ul>
+      <li>אפשרות להגדלת והקטנת טקסט.</li>
+      <li>אפשרות לניגודיות גבוהה.</li>
+      <li>אפשרות לרקע בהיר.</li>
+      <li>אפשרות להדגשת קישורים.</li>
+      <li>אפשרות לריווח טקסט.</li>
+      <li>אפשרות לעצירת אנימציות.</li>
+      <li>ניווט באמצעות מקלדת באזורים המרכזיים באתר.</li>
+      <li>שימוש בכותרות, קישורים וטקסטים חלופיים לתמונות ככל האפשר.</li>
+    </ul>
+
+    <h2>מבנה האתר</h2>
+    <p>האתר נבנה במטרה לאפשר שימוש ברור ונוח, כולל תפריט ניווט, קישורים פנימיים, טופס יצירת קשר וכפתורי פעולה מהירים.</p>
+
+    <h2>מגבלות נגישות</h2>
+    <p>ייתכן שיימצאו באתר אזורים שטרם הונגשו באופן מלא או תלויים בשירותים חיצוניים. אם נתקלת בקושי בגלישה או בשימוש באתר, נשמח לקבל פנייה ולטפל בנושא בהקדם האפשרי.</p>
+
+    <h2>יצירת קשר בנושא נגישות</h2>
+    <p>רכזת הנגישות: Aviva Eyelash.</p>
+    <p>טלפון: 053-622-9328<br>מייל: avivahailo123@gmail.com</p>
+
+    <h2>עדכון ההצהרה</h2>
+    <p>הצהרה זו עודכנה לאחרונה בתאריך 08/07/2026.</p>
+
+    <div class="legal-back-wrap">
+      <a class="legal-back" href="index.html">חזרה לדף הבית</a>
+    </div>
+  </article>
+</main>
+  <div class="side-actions" aria-label="פעולות מהירות">
+    <a class="side-tab whatsapp-tab" href="https://wa.me/972536229328" target="_blank" rel="noopener">
+      <span class="side-icon" aria-hidden="true"><img src="images/icons/whatsapp-green.svg" alt=""></span>
+      <span class="side-label">WhatsApp</span>
+    </a>
+
+    <button class="side-tab access-tab" type="button" aria-expanded="false" aria-controls="access-panel">
+      <span class="side-icon access-sign" aria-hidden="true">♿</span>
+      <span class="side-label">נגישות</span>
+    </button>
+  </div>
+
+  <aside class="access-panel" id="access-panel" aria-label="תפריט נגישות" aria-hidden="true">
+    <div class="access-head">
+      <h2>אפשרויות נגישות</h2>
+      <button type="button" class="access-close" aria-label="סגירת תפריט">×</button>
+    </div>
+    <div class="access-tools">
+      <button type="button" data-access="increase">הגדלת טקסט</button>
+      <button type="button" data-access="decrease">הקטנת טקסט</button>
+      <button type="button" data-access="contrast">ניגודיות גבוהה</button>
+      <button type="button" data-access="light">רקע בהיר</button>
+      <button type="button" data-access="links">הדגשת קישורים</button>
+      <button type="button" data-access="spacing">ריווח טקסט</button>
+      <button type="button" data-access="motion">עצירת אנימציות</button>
+      <button type="button" data-access="reset">איפוס הגדרות</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <nav aria-label="קישורי פוטר">
+      <a href="index.html">בית</a>
+      <a href="terms.html">תקנון</a>
+      <a href="privacy.html">פרטיות</a>
+      <a href="accessibility.html">הצהרת נגישות</a>
+      <a href="index.html#contact">יצירת קשר</a>
+    </nav>
+    <p>נבנה ע"י <a href="https://digital247now.com" target="_blank" rel="noopener">Digital247Now</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,48 +1,191 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>תקנון שימוש | Aviva Eyelash</title>
-  <meta name="description" content="תקנון שימוש לאתר Aviva Eyelash.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תקנון האתר | Aviva Eyelash</title>
+  <meta name="description" content="תקנון אתר Aviva Eyelash">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://aviva-eyelashes.com/terms.html">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .legal-hero {
+      margin-top:0;
+    }
+    .legal-page {
+      width:min(920px, calc(100% - 32px));
+      margin:48px auto 54px;
+    }
+    .legal-card {
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(231,95,149,.22);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      padding:clamp(22px,4vw,38px);
+    }
+    .legal-card h1 {
+      margin:0 0 20px;
+      font-size:clamp(28px,5vw,42px);
+      text-align:center;
+    }
+    .legal-card h2 {
+      margin:28px 0 8px;
+      font-size:22px;
+      color:var(--pink-dark);
+    }
+    .legal-card p,
+    .legal-card li {
+      font-size:17px;
+      line-height:1.85;
+      color:var(--ink);
+    }
+    .legal-card ul {
+      padding-right:22px;
+      margin:8px 0 0;
+    }
+    .legal-back-wrap {
+      text-align:center;
+      margin-top:30px;
+    }
+    .legal-back {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:0 24px;
+      border:2px solid #000;
+      border-radius:999px;
+      background:#000;
+      color:var(--pink-main);
+      font-weight:700;
+    }
+    @media (max-width:700px){
+      .legal-hero .hero-image{
+        min-height:250px;
+        object-fit:cover;
+        object-position:center top;
+      }
+      .legal-page{
+        width:min(100% - 24px, 620px);
+        margin:34px auto 44px;
+      }
+      .legal-card{
+        padding:22px 16px;
+      }
+      .legal-card p,
+      .legal-card li{
+        font-size:16px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main class="legal-page">
-    <article class="legal-card">
-      <a class="btn back-home" href="index.html">חזרה לדף הבית</a>
-      <h1>תקנון שימוש</h1>
-      <p>
-        השימוש באתר מהווה הסכמה לתנאים המפורטים בתקנון זה.
-      </p>
+  <a class="skip-link" href="#main">דלגי לתוכן המרכזי</a>
 
-      <h2>כללי</h2>
-      <p>
-        האתר נועד להציג מידע על שירותי ריסים וגבות ולספק אפשרות ליצירת קשר ותיאום תור.
-      </p>
+  <button class="menu-button" type="button" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="site-menu">
+    <span></span><span></span><span></span>
+  </button>
 
-      <h2>מידע באתר</h2>
-      <p>
-        התכנים באתר נועדו למידע כללי בלבד. ייתכנו שינויים בשירותים, בזמינות ובפרטים נוספים.
-      </p>
+  <nav class="site-menu" id="site-menu" aria-label="תפריט ראשי">
+    <a href="index.html#services">השירותים</a>
+    <a href="index.html#lashes-gallery">גלריית ריסים</a>
+    <a href="index.html#brows-gallery">גלריית גבות</a>
+    <a href="index.html#studio-details">פרטי הסטודיו</a>
+    <a href="index.html#contact">יצירת קשר</a>
+    <a href="terms.html">תקנון</a>
+    <a href="privacy.html">פרטיות</a>
+    <a href="accessibility.html">נגישות</a>
+  </nav>
 
-      <h2>תיאום תורים</h2>
-      <p>
-        קביעת תור מתבצעת מול העסק באמצעות WhatsApp, טלפון או טופס יצירת קשר.
-        תור מאושר רק לאחר אישור מפורש מצד העסק.
-      </p>
+  <header class="hero legal-hero" aria-label="Aviva Eyelash">
+    <img
+      src="images/header.png"
+      alt="אביבה איילאש - הרמת ריסים והרמת ועיצוב גבות"
+      class="hero-image">
+  </header>
 
-      <h2>זכויות יוצרים</h2>
-      <p>
-        אין להעתיק, להפיץ או לעשות שימוש בתמונות, טקסטים או עיצוב האתר ללא אישור מראש.
-      </p>
+<main id="main" class="legal-page">
+  <article class="legal-card">
+    <h1>תקנון האתר</h1>
+    <p>ברוכה הבאה לאתר Aviva Eyelash. השימוש באתר מהווה הסכמה לתנאים המפורטים בעמוד זה.</p>
 
-      <h2>אחריות</h2>
-      <p>
-        העסק יעשה מאמץ לספק מידע תקין וזמין, אך אינו מתחייב כי האתר יהיה זמין בכל עת וללא תקלות.
-      </p>
-    </article>
-  </main>
+    <h2>כללי</h2>
+    <p>האתר מציג מידע על שירותי Aviva Eyelash, לרבות הרמת ריסים, הרמת גבות ועיצוב גבות, ומאפשר יצירת קשר עם הסטודיו לצורך קבלת פרטים ותיאום תור.</p>
+
+    <h2>קביעת תורים</h2>
+    <p>פנייה דרך האתר, WhatsApp, טלפון, מייל או Instagram אינה מהווה אישור אוטומטי לתור. התור יאושר רק לאחר מענה ותיאום מול Aviva Eyelash.</p>
+
+    <h2>איחורים וביטולים</h2>
+    <p>במקרה של איחור, ביטול או שינוי מועד, יש לעדכן את הסטודיו בהקדם האפשרי. Aviva Eyelash רשאית לשנות או לבטל תור בהתאם לזמינות, איחור משמעותי או נסיבות שאינן מאפשרות את ביצוע הטיפול.</p>
+
+    <h2>מידע באתר</h2>
+    <p>המידע באתר נועד לצורך היכרות כללית עם השירותים ואינו מהווה ייעוץ רפואי, אבחנה או התחייבות לתוצאה מסוימת.</p>
+
+    <h2>תמונות ותוצאות</h2>
+    <p>התמונות באתר מוצגות לצורך המחשה בלבד. התוצאה בפועל עשויה להשתנות בין לקוחה ללקוחה בהתאם למבנה הריסים, הגבות והמאפיינים האישיים.</p>
+
+    <h2>אחריות הלקוחה</h2>
+    <p>על הלקוחה למסור מידע נכון ומלא לפני טיפול, לרבות רגישויות, מצבים רפואיים, טיפולים קודמים או כל פרט שעשוי להיות רלוונטי לביצוע הטיפול.</p>
+
+    <h2>זכויות יוצרים</h2>
+    <p>כל התוכן באתר, לרבות טקסטים, תמונות, עיצוב, לוגו וסימנים מסחריים, שייך ל־Aviva Eyelash או לבעלי הזכויות הרלוונטיים. אין להעתיק, לשכפל, לפרסם או להשתמש בתוכן ללא אישור מראש ובכתב.</p>
+
+    <h2>שינויים באתר ובתקנון</h2>
+    <p>Aviva Eyelash רשאית לעדכן את האתר, השירותים, התוכן והתקנון מעת לעת ללא הודעה מוקדמת.</p>
+
+    <h2>יצירת קשר</h2>
+    <p>לשאלות בנושא התקנון ניתן לפנות בטלפון 053-622-9328 או במייל avivahailo123@gmail.com.</p>
+
+    <div class="legal-back-wrap">
+      <a class="legal-back" href="index.html">חזרה לדף הבית</a>
+    </div>
+  </article>
+</main>
+  <div class="side-actions" aria-label="פעולות מהירות">
+    <a class="side-tab whatsapp-tab" href="https://wa.me/972536229328" target="_blank" rel="noopener">
+      <span class="side-icon" aria-hidden="true"><img src="images/icons/whatsapp-green.svg" alt=""></span>
+      <span class="side-label">WhatsApp</span>
+    </a>
+
+    <button class="side-tab access-tab" type="button" aria-expanded="false" aria-controls="access-panel">
+      <span class="side-icon access-sign" aria-hidden="true">♿</span>
+      <span class="side-label">נגישות</span>
+    </button>
+  </div>
+
+  <aside class="access-panel" id="access-panel" aria-label="תפריט נגישות" aria-hidden="true">
+    <div class="access-head">
+      <h2>אפשרויות נגישות</h2>
+      <button type="button" class="access-close" aria-label="סגירת תפריט">×</button>
+    </div>
+    <div class="access-tools">
+      <button type="button" data-access="increase">הגדלת טקסט</button>
+      <button type="button" data-access="decrease">הקטנת טקסט</button>
+      <button type="button" data-access="contrast">ניגודיות גבוהה</button>
+      <button type="button" data-access="light">רקע בהיר</button>
+      <button type="button" data-access="links">הדגשת קישורים</button>
+      <button type="button" data-access="spacing">ריווח טקסט</button>
+      <button type="button" data-access="motion">עצירת אנימציות</button>
+      <button type="button" data-access="reset">איפוס הגדרות</button>
+    </div>
+  </aside>
+
+  <footer class="site-footer">
+    <nav aria-label="קישורי פוטר">
+      <a href="index.html">בית</a>
+      <a href="terms.html">תקנון</a>
+      <a href="privacy.html">פרטיות</a>
+      <a href="accessibility.html">הצהרת נגישות</a>
+      <a href="index.html#contact">יצירת קשר</a>
+    </nav>
+    <p>נבנה ע"י <a href="https://digital247now.com" target="_blank" rel="noopener">Digital247Now</a></p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
