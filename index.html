@@ -30,9 +30,9 @@
     content="הרמת ריסים והרמת ועיצוב גבות בחולון.">
 
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/style.css">
 
@@ -206,56 +206,54 @@
       </div>
 
       <div class="details-row">
-        <a class="detail-item" href="tel:0536229328">
+        <a class="detail-item" href="tel:0536229328" aria-label="טלפון">
           <span class="detail-icon" aria-hidden="true">
-            <img src="images/icons/phone-pink.svg" alt="">
+            <img src="images/icons/phone.svg" alt="">
           </span>
           <span class="detail-title">טלפון</span>
-          <strong>053-622-9328</strong>
         </a>
 
         <a
           class="detail-item"
           href="https://wa.me/972536229328"
           target="_blank"
-          rel="noopener">
+          rel="noopener"
+          aria-label="WhatsApp">
           <span class="detail-icon" aria-hidden="true">
-            <img src="images/icons/whatsapp-pink.svg" alt="">
+            <img src="images/icons/whatsapp.svg" alt="">
           </span>
           <span class="detail-title">WhatsApp</span>
-          <strong>שליחת הודעה</strong>
         </a>
 
-        <a class="detail-item" href="mailto:avivahailo123@gmail.com">
+        <a class="detail-item" href="mailto:avivahailo123@gmail.com" aria-label="מייל">
           <span class="detail-icon" aria-hidden="true">
-            <img src="images/icons/mail-pink.svg" alt="">
+            <img src="images/icons/mail.svg" alt="">
           </span>
           <span class="detail-title">מייל</span>
-          <strong>avivahailo123@gmail.com</strong>
+        </a>
+
+        <a
+          class="detail-item"
+          href="https://www.instagram.com/aviva_eyelash_lifting"
+          target="_blank"
+          rel="noopener"
+          aria-label="Instagram">
+          <span class="detail-icon" aria-hidden="true">
+            <img src="images/icons/instagram.svg" alt="">
+          </span>
+          <span class="detail-title">Instagram</span>
         </a>
 
         <a
           class="detail-item"
           href="https://waze.com/ul?q=התנאים%2013%20חולון"
           target="_blank"
-          rel="noopener">
+          rel="noopener"
+          aria-label="Waze">
           <span class="detail-icon" aria-hidden="true">
-            <img src="images/icons/location-pink.svg" alt="">
+            <img src="images/icons/waze.svg" alt="">
           </span>
-          <span class="detail-title">כתובת</span>
-          <strong>התנאים 13, חולון</strong>
-        </a>
-
-        <a
-          class="detail-item"
-          href="https://waze.com/ul?q=התנאים%2013%20חולון"
-          target="_blank"
-          rel="noopener">
-          <span class="detail-icon" aria-hidden="true">
-            <img src="images/icons/waze-pink.svg" alt="">
-          </span>
-          <span class="detail-title">ניווט</span>
-          <strong>Waze</strong>
+          <span class="detail-title">Waze</span>
         </a>
       </div>
     </section>
@@ -270,7 +268,6 @@
         <form
           action="https://formsubmit.co/avivahailo123@gmail.com"
           method="POST"
-          target="formsubmit-frame"
           class="contact-form">
           <input
             type="hidden"
@@ -295,13 +292,8 @@
           </label>
 
           <button type="submit">שליחת הודעה</button>
-          <p class="form-status" aria-live="polite"></p>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
-        <iframe
-          class="formsubmit-frame"
-          name="formsubmit-frame"
-          title="שליחת טופס"
-          aria-hidden="true"></iframe>
       </div>
     </section>
   </main>
@@ -313,7 +305,7 @@
       target="_blank"
       rel="noopener">
       <span class="side-icon" aria-hidden="true">
-        <img src="images/icons/whatsapp-green.svg" alt="">
+        <img src="images/icons/whatsapp.svg" alt="">
       </span>
       <span class="side-label">WhatsApp</span>
     </a>

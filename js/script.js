@@ -264,33 +264,56 @@ document.addEventListener('keydown', (event) => {
 
 loadAccessState();
 
-// Keep FormSubmit on the same page and show a success message.
-document.querySelectorAll('.contact-form').forEach((form) => {
-  const status = form.querySelector('.form-status');
-  const button = form.querySelector('button[type="submit"]');
 
-  form.addEventListener('submit', () => {
-    form.classList.add('is-sending');
-    if (button) {
-      button.disabled = true;
-      button.textContent = 'שולח...';
-    }
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const status = contactForm.querySelector('.form-status');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const formData = new FormData(contactForm);
+
     if (status) {
-      status.classList.remove('is-visible');
+      status.className = 'form-status';
       status.textContent = '';
     }
 
-    window.setTimeout(() => {
-      form.classList.remove('is-sending');
-      form.reset();
-      if (button) {
-        button.disabled = false;
-        button.textContent = 'שליחת הודעה';
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'שולחת...';
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('FormSubmit error');
       }
+
+      contactForm.reset();
+
       if (status) {
         status.textContent = 'ההודעה נשלחה בהצלחה';
-        status.classList.add('is-visible');
+        status.classList.add('is-success');
       }
-    }, 900);
+    } catch (error) {
+      if (status) {
+        status.textContent = 'אירעה תקלה בשליחה. נסי שוב או שלחי הודעה ב-WhatsApp.';
+        status.classList.add('is-error');
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'שליחת הודעה';
+      }
+    }
   });
-});
+}
